@@ -9,7 +9,6 @@ const maxProfit = function(prices) {
   
   let max;
   let min;
-  let subMax;
   let revenue;
   
   while (prices.length > 0) {
