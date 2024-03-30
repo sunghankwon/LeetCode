@@ -3,10 +3,6 @@
  * @return {number}
  */
 const maxProfit = function(prices) {
-  if (prices.length < 2) {
-    return 0;
-  }
-  
   let max;
   let min;
   let revenue;
