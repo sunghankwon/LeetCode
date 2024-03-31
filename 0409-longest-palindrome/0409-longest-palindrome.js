@@ -3,11 +3,10 @@
  * @return {number}
  */
 const longestPalindrome = function(s) {
-  const answer = [];
   const array = s.split("");
   const obj = {};
   let count = 0;
-  let holcount = 0;
+  let isOdd = false;
   
   for (let spell of array) {
     if (!obj[spell]) {
@@ -21,9 +20,9 @@ const longestPalindrome = function(s) {
       count += obj[spell];
     } else {
       count += obj[spell] - 1
-      holcount++;
+      isOdd = true;
     }
   }
   
-  return holcount === 0 ? count : count + 1;
+  return isOdd ? count + 1 : count;
 };
