@@ -7,6 +7,10 @@ const canConstruct = function(ransomNote, magazine) {
   if (ransomNote.length > magazine.length) {
     return false;
   }
+    
+  if (magazine.includes(ransomNote)) {
+    return true;
+  }
   
   const spellR = {};
   const spellM = {};
