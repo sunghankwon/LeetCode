@@ -3,25 +3,28 @@
  * @return {number}
  */
 const lengthOfLongestSubstring = function(s) {
-  let maxCount = 0;
-  let count = 0;
+  let maxLength = 0;
+  let charLength = 0;
   let spell = "";
   
   for(let i = 0; i < s.length; i++) {
-    count++;
+    charLength++;
     spell = s[i];
+    
     for (let j = i + 1; j < s.length; j++) {
       if (spell.includes(s[j])) {
         break;
       }
-      count++;
+      
+      charLength++;
       spell += s[j];
     }
-    if (count > maxCount) {
-      maxCount = count;
+    if (charLength > maxLength) {
+      maxLength = charLength;
     }
-    count = 0;
+    
+    charLength = 0;
   }
   
-  return maxCount;
+  return maxLength;
 };
