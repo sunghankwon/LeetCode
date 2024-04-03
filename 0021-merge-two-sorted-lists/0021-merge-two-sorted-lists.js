@@ -22,6 +22,7 @@ const mergeTwoLists = function(l1, l2) {
       newList.next = new ListNode(l2.val);
       l2 = l2.next;
     }
+      
     newList = newList.next;
   }
   
