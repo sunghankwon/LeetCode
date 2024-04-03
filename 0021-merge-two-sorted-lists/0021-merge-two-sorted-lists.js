@@ -25,11 +25,7 @@ const mergeTwoLists = function(l1, l2) {
     newList = newList.next;
   }
   
-  if (l1 !== null) {
-    newList.next = l1;
-  } else if (l2 !== null) {
-    newList.next = l2;
-  }
+  newList.next = l1 === null ? l2 : l1;
   
   return newListHead.next;
 };
