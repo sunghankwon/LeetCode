@@ -12,5 +12,8 @@ const backspaceCompare = function(s, t) {
     t = t.substring(0, indexT -1) + t.substring(indexT + 1);
   }
   
-  return s === t ? true : false;
+  if (s === t) {
+    return true;
+  }
+  return false;
 };
