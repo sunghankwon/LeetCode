@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {boolean}
- */
 const containsDuplicate = function(nums) {
   const obj = {};
   
@@ -9,7 +5,7 @@ const containsDuplicate = function(nums) {
     if (obj[nums[i]]) {
       return true;
     }
-    obj[nums[i]] = true;
+    obj[nums[i]] = 1;
   }
   
   return false;
