@@ -1,19 +1,11 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */
 const backspaceCompare = function(s, t) {
-  while (s.includes("#") || t.includes("#") ) {
-    const indexS = s.indexOf("#")
-    s = s.substring(0, indexS -1) + s.substring(indexS + 1);
+  const reduceString = (str) => {
+    while (str.includes("#")) {
+      const index = str.indexOf("#");
+      str = str.substring(0, Math.max(0, index - 1)) + str.substring(index + 1);
+    }
+    return str;
+  };
     
-    const indexT = t.indexOf("#")
-    t = t.substring(0, indexT -1) + t.substring(indexT + 1);
-  }
-  
-  if (s === t) {
-    return true;
-  }
-  return false;
+  return reduceString(s) === reduceString(t);
 };
