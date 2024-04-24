@@ -3,14 +3,7 @@
  * @return {number}
  */
 const hammingWeight = function(n) {
-  const string = n.toString(2);
-  let count = 0;
+  const arr = n.toString(2).split("0").join("");
   
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] === "1") {
-      count++;
-    }  
-  }
-  
-  return count;
+  return arr.length;
 };
