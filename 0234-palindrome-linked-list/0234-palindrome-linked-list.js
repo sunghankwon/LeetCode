@@ -10,12 +10,24 @@
  * @return {boolean}
  */
 const isPalindrome = function(head) {
-  let list = "";
+  const list = [];
   
   while(head !== null) {
-    list += head.val;
+    list.push(head.val);
     head = head.next;
   }
-
-  return list === list.split("").reverse().join("");
+  
+  let right = list.length -1;
+  let left = 0;
+  
+  while (left < right) {
+    if (list[left] === list[right]) {
+      right--;
+      left++;
+    } else {
+      return false;
+    }
+  }
+  
+  return true;
 };
