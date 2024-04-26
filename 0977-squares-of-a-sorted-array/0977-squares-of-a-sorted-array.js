@@ -3,19 +3,19 @@
  * @return {number[]}
  */
 const sortedSquares = function(nums) {  
-  let start = 0;
-  let end = nums.length -1;
+  let left = 0;
+  let right = nums.length -1;
   const result = [];
-    
-  while (start <= end) {
-    if (Math.abs(nums[start]) > Math.abs(nums[end])) {
-      result.push(nums[start] ** 2)
-      start++;
+  
+  while (left <= right) {
+    if (Math.abs(nums[left]) > Math.abs(nums[right])) {
+      result.push(nums[left] ** 2)
+      left++;
     } else {
-      result.push(nums[end] ** 2)
-      end--;
+      result.push(nums[right] ** 2)
+      right--;
     }
   }
-    
+  
   return result.reverse();
 };
