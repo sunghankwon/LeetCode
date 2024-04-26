@@ -3,20 +3,20 @@
  * @return {number[]}
  */
 const sortedSquares = function(nums) {  
-  let left = 0;
-  let right = nums.length -1;
+  let start = 0;
+  let end = nums.length -1;
   const result = [];
   
-  while (left < right) {
-    if (Math.abs(nums[left]) > Math.abs(nums[right])) {
-      result.push(nums[left] ** 2)
-      left++;
+  while (start < end) {
+    if (Math.abs(nums[start]) > Math.abs(nums[end])) {
+      result.push(nums[start] ** 2)
+      start++;
     } else {
-      result.push(nums[right] ** 2)
-      right--;
+      result.push(nums[end] ** 2)
+      end--;
     }
   }
-  result.push(nums[left] ** 2)
+  result.push(nums[start] ** 2)
   
   return result.reverse();
 };
