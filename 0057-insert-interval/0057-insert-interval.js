@@ -4,7 +4,8 @@
  * @return {number[][]}
  */
 const insert = function(intervals, newInterval) {
-  const arr = [...intervals].concat([newInterval]).sort((a,b) => a[0] - b[0]);
+  intervals.push(newInterval);
+  arr = intervals.sort((a,b) => a[0] - b[0]);
   let currentS = arr[0][0];
   let currentE = arr[0][1];
   
