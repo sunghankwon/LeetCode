@@ -5,13 +5,11 @@
  */
 const insert = function(intervals, newInterval) {
   const arr = intervals.concat([newInterval]).sort((a,b) => a[0] - b[0]);
-  let currentS = arr[0][0];
-  let currentE = arr[0][1];
   
   for (let i = 1; i < arr.length; i++) {
-    if (currentE >= arr[i][0]) {
-      currentE = Math.max(arr[i][1], currentE);
-      arr[i - 1] = [currentS, currentE]
+    if (arr[i - 1][1] >= arr[i][0]) {
+      arr[i - 1][1] = Math.max(arr[i][1], arr[i - 1][1]);
+      arr[i - 1] = [arr[i - 1][0], arr[i - 1][1]]
       arr.splice(i, 1);
       i--;
     } else {
