@@ -15,15 +15,12 @@ const countNodes = function(root) {
   
   function nodeCount(node) {
     if (node === null) {
-      return ;
+      return;
     }
-    
     count++;
-    
     nodeCount(node.left);
     nodeCount(node.right);
   }
-  
   nodeCount(root);
   
   return count;
