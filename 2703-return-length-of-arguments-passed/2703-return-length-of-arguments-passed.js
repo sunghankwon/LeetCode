@@ -3,9 +3,7 @@
  * @return {number}
  */
 const argumentsLength = function(...args) {
-  const array = [...args];
-  
-  return array.length;
+  return [...args].length;
 };
 
 /**
