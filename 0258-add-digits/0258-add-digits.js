@@ -5,6 +5,10 @@
 const addDigits = function(num) {
   let str = num.toString();
   
+  if (str.length === 1) {
+    return num;
+  }
+  
   while(str.length > 1) {
     let num = 0;
     
