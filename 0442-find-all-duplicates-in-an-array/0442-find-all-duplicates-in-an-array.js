@@ -3,21 +3,21 @@
  * @return {number[]}
  */
 const findDuplicates = function(nums) {
-  const obj = {};
   const result = [];
+  const map = new Map();
   
   for (let i = 0; i < nums.length; i++) {
-    if (!obj[nums[i]]) {
-      obj[nums[i]] = 0;
+    if (map.has(nums[i])) {
+      map.set(nums[i], map.get(nums[i]) + 1);
+    } else {
+      map.set(nums[i], 1);
     }
-    obj[nums[i]]++;
   }
-  for (let num in obj) {
-    if(obj[num] === 2) {
-      result.push(Number(num))
+  for (let [key, value] of map) {
+    if (value === 2) {
+      result.push(key);
     }
   }
   
   return result;
 };
-
