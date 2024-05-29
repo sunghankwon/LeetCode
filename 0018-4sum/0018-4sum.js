@@ -20,9 +20,6 @@ const fourSum = function(nums, target) {
         if (sum === target) {
           array.push([sortedNums[i], sortedNums[j], sortedNums[start], sortedNums[end]]);
         
-          while (start < end && sortedNums[start] === sortedNums[start + 1]) start++;
-          while (start < end && sortedNums[end] === sortedNums[end - 1]) end--;
-        
           start++;
           end--;
         } else if (sum > target) {
