@@ -4,11 +4,10 @@
  */
 const reverseWords = function(s) {
   const words = s.split(" ");
-  const array = [];
   
-  for (let word of words) {
-    array.push(word.split("").reverse().join(""));
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].split("").reverse().join("");
   }
   
-  return array.join(" ");  
+  return words.join(" ");  
 };
